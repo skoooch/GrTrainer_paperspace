@@ -51,8 +51,8 @@ class Params:
         self.LABEL_FILE = 'cls_top_5.txt'
 
         self.MODEL_PATH = 'trained-models'
-        self.CLS_MODEL_PATH = 'trained-models/%s/%s_epoch%s.pth' % (self.CLS_MODEL_NAME, self.CLS_MODEL_NAME, self.EPOCHS)
-        self.GRASP_MODEL_PATH = 'trained-models/%s/%s_epoch%s.pth' % (self.GRASP_MODEL_NAME, self.GRASP_MODEL_NAME, self.EPOCHS)
+        self.CLS_MODEL_PATH = 'trained-models/%s_epoch%s.pth' % (self.CLS_MODEL_NAME, self.CLS_MODEL_NAME, self.EPOCHS)
+        self.GRASP_MODEL_PATH = 'trained-models/%s_epoch%s.pth' % (self.GRASP_MODEL_NAME, self.GRASP_MODEL_NAME, self.EPOCHS)
 
         self.MODEL_LOG_PATH = 'trained-models/%s' % self.MODEL_NAME
         self.LOG_PATH = 'logs'
