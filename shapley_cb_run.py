@@ -78,8 +78,9 @@ def one_iteration(
         else:
             removing_players.append(players[c[idx]])
             partial_model = remove_players(model, layer, removing_players)      
-            new_val = get_acc(partial_model, task=task, device=device)
-            old_val = new_val
+            # new_val = get_acc(partial_model, task=task, device=device)
+            # old_val = new_val
+            # commented out Jan 2024
 
         pbar.set_postfix({'Acc': new_val})
         pbar.update(1)
@@ -114,7 +115,7 @@ class TensorID:
 
 def get_model(model_path, device=params.DEVICE):
     model = models.AlexnetMap_v3().to(device)
-    model.load_state_dict(torch.load(model_path))
+    model.load_state_dict(torch.load(model_path, map_location = 'cpu'))
     model.eval()
 
     return model
@@ -163,7 +164,7 @@ def instantiate_tmab_logs(players, log_dir):
 # Experiment parameters
 SAVE_FREQ = 1
 TASK = 'grasp'
-LAYER = 'rgb_features.0'
+LAYER = 'rgb_features.0' #'rgb_features.0'
 METRIC = 'accuracy'
 TRUNCATION_ACC = 50.
 DEVICE = sys.argv[1]
@@ -191,6 +192,7 @@ if run_name not in os.listdir(DIR):
 ## Load Model and get weights
 model = get_model(MODEL_PATH, DEVICE)
 weights, bias = get_weights(model, LAYER)
+weights = weights[:-2]
 ## Instantiate or load player list
 players = get_players(run_dir, weights)
 # Instantiate tmab logs

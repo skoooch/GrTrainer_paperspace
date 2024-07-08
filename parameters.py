@@ -43,11 +43,11 @@ class Params:
         self.LAYERS = ['rgb_features.0', 'features.0', 'features.4', 'features.7', 'features.10']
 
         # Paths
-        self.DATA_PATH = 'data'
-        self.TRAIN_PATH = 'data/top_5_compressed/train'
-        self.TRAIN_PATH_ALT = 'data/top_5_compressed_old/train'
-        self.TEST_PATH = 'data/top_5_compressed/test'
-        self.TEST_PATH_ALT = 'data/top_5_compressed_old/test'
+        self.DATA_PATH = '../gr-cls-multitask/data'
+        self.TRAIN_PATH = '../gr-cls-multitask/data/top_5_compressed/train'
+        self.TRAIN_PATH_ALT = '../gr-cls-multitask/data/top_5_compressed_old/train'
+        self.TEST_PATH = '../gr-cls-multitask/data/top_5_compressed/test'
+        self.TEST_PATH_ALT = 'd../gr-cls-multitask/ata/top_5_compressed_old/test'
         self.LABEL_FILE = 'cls_top_5.txt'
 
         self.MODEL_PATH = 'trained-models'
