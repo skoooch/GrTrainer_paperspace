@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 from parameters import Params
 
 # Experiment parameters
-TYPES = ['cls', 'grasp']
-LAYERS = ['rgb_features.0', 'features.0', 'features.4', 'features.7', 'features.10']
+TYPES = ['grasp']
+LAYERS = ['rgb_features.0']
 R = 100.
 DELTA = 0.2
 
